@@ -1,0 +1,59 @@
+PODS:
+  - PINCache (3.0.4):
+    - PINCache/Arc-exception-safe (= 3.0.4)
+    - PINCache/Core (= 3.0.4)
+  - PINCache/Arc-exception-safe (3.0.4):
+    - PINCache/Core
+  - PINCache/Core (3.0.4):
+    - PINOperation (~> 1.2.3)
+  - PINOperation (1.2.3)
+  - PINRemoteImage/Core (3.0.4):
+    - PINOperation
+  - PINRemoteImage/iOS (3.0.4):
+    - PINRemoteImage/Core
+  - PINRemoteImage/PINCache (3.0.4):
+    - PINCache (~> 3.0.4)
+    - PINRemoteImage/Core
+  - Texture (3.2.0):
+    - Texture/AssetsLibrary (= 3.2.0)
+    - Texture/Core (= 3.2.0)
+    - Texture/MapKit (= 3.2.0)
+    - Texture/Photos (= 3.2.0)
+    - Texture/PINRemoteImage (= 3.2.0)
+    - Texture/Video (= 3.2.0)
+  - Texture/AssetsLibrary (3.2.0):
+    - Texture/Core
+  - Texture/Core (3.2.0)
+  - Texture/MapKit (3.2.0):
+    - Texture/Core
+  - Texture/Photos (3.2.0):
+    - Texture/Core
+  - Texture/PINRemoteImage (3.2.0):
+    - PINRemoteImage/iOS (~> 3.0.0)
+    - PINRemoteImage/PINCache
+    - Texture/Core
+  - Texture/Video (3.2.0):
+    - Texture/Core
+
+DEPENDENCIES:
+  - Texture (from `../..`)
+
+SPEC REPOS:
+  trunk:
+    - PINCache
+    - PINOperation
+    - PINRemoteImage
+
+EXTERNAL SOURCES:
+  Texture:
+    :path: "../.."
+
+SPEC CHECKSUMS:
+  PINCache: d9a87a0ff397acffe9e2f0db972ac14680441158
+  PINOperation: fb563bcc9c32c26d6c78aaff967d405aa2ee74a7
+  PINRemoteImage: 6256a644f4996991f124811763c7286b2a63ff94
+  Texture: 6a21a44e9c7a4e5bd3b1590965571e90e9ae7914
+
+PODFILE CHECKSUM: 83442962e1faad4969d7156e5c809e0f7c478042
+
+COCOAPODS: 1.16.2
