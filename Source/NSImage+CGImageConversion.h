@@ -1,5 +1,5 @@
 //
-//  NSImage.h
+//  NSImage+CGImageConversion.h
 //  AsyncDisplayKit
 //
 //  Created by Arseni Laputska on 9.01.25.
