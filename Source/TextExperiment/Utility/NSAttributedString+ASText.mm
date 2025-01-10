@@ -444,7 +444,7 @@ return style. _attr_;
 }
 
 + (NSMutableAttributedString *)as_attachmentStringWithContent:(id)content
-                                                  contentMode:(UIViewContentMode)contentMode
+                                                  contentMode:(NSViewContentMode)contentMode
                                                         width:(CGFloat)width
                                                        ascent:(CGFloat)ascent
                                                       descent:(CGFloat)descent {
@@ -467,7 +467,7 @@ return style. _attr_;
 }
 
 + (NSMutableAttributedString *)as_attachmentStringWithContent:(id)content
-                                                  contentMode:(UIViewContentMode)contentMode
+                                                  contentMode:(NSViewContentMode)contentMode
                                                attachmentSize:(CGSize)attachmentSize
                                                   alignToFont:(NSFont *)font
                                                     alignment:(ASTextVerticalAlignment)alignment {
@@ -541,7 +541,7 @@ return style. _attr_;
   delegate.width = bounding.size.width + 2 * bounding.origin.x;
   
   ASTextAttachment *attachment = [ASTextAttachment new];
-  attachment.contentMode = UIViewContentModeScaleAspectFit;
+  attachment.contentMode = NSViewContentModeScaleAspectFit;
   attachment.contentInsets = NSEdgeInsetsMake(ascent - (bounding.size.height + bounding.origin.y), bounding.origin.x, descent + bounding.origin.y, bounding.origin.x);
   if (hasAnim) {
     Class imageClass = NSClassFromString(@"ASAnimatedImageView");

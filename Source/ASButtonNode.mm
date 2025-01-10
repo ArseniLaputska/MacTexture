@@ -83,7 +83,7 @@
   if (!_backgroundImageNode) {
     _backgroundImageNode = [[ASImageNode alloc] init];
     [_backgroundImageNode setLayerBacked:YES];
-    [_backgroundImageNode setContentMode:UIViewContentModeScaleToFill];
+    [_backgroundImageNode setContentMode:NSViewContentModeScaleToFill];
   }
   return _backgroundImageNode;
 }

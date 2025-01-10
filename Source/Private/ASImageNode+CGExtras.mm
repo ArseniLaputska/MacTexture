@@ -36,7 +36,7 @@ static CGSize _ASSizeFitWithAspectRatio(CGFloat aspectRatio, CGSize constraints)
 
 void ASCroppedImageBackingSizeAndDrawRectInBounds(CGSize sourceImageSize,
                                                   CGSize boundsSize,
-                                                  UIViewContentMode contentMode,
+                                                  NSViewContentMode contentMode,
                                                   CGRect cropRect,
                                                   BOOL forceUpscaling,
                                                   CGSize forcedSize,
@@ -59,9 +59,9 @@ void ASCroppedImageBackingSizeAndDrawRectInBounds(CGSize sourceImageSize,
   if (cropToRectDimensions) {
     minimumDestinationSize = CGSizeMake(boundsSize.width / cropRect.size.width, boundsSize.height / cropRect.size.height);
   } else {
-    if (contentMode == UIViewContentModeScaleAspectFill)
+    if (contentMode == NSViewContentModeScaleAspectFill)
       minimumDestinationSize = _ASSizeFitWithAspectRatio(boundsAspectRatio, sourceImageSize);
-    else if (contentMode == UIViewContentModeScaleAspectFit)
+    else if (contentMode == NSViewContentModeScaleAspectFit)
       minimumDestinationSize = _ASSizeFillWithAspectRatio(boundsAspectRatio, sourceImageSize);
   }
 
@@ -87,9 +87,9 @@ void ASCroppedImageBackingSizeAndDrawRectInBounds(CGSize sourceImageSize,
   if (cropToRectDimensions) {
     scaledSizeForImage = CGSizeMake(boundsSize.width / cropRect.size.width, boundsSize.height / cropRect.size.height);
   } else {
-    if (contentMode == UIViewContentModeScaleAspectFill)
+    if (contentMode == NSViewContentModeScaleAspectFill)
       scaledSizeForImage = _ASSizeFillWithAspectRatio(sourceImageAspectRatio, scaledSizeForImage);
-    else if (contentMode == UIViewContentModeScaleAspectFit)
+    else if (contentMode == NSViewContentModeScaleAspectFit)
       scaledSizeForImage = _ASSizeFitWithAspectRatio(sourceImageAspectRatio, scaledSizeForImage);
   }
 
@@ -102,7 +102,7 @@ void ASCroppedImageBackingSizeAndDrawRectInBounds(CGSize sourceImageSize,
                           scaledSizeForImage.height);
   } else {
     // We want to obey the origin of cropRect in aspect-fill mode.
-    if (contentMode == UIViewContentModeScaleAspectFill) {
+    if (contentMode == NSViewContentModeScaleAspectFill) {
       drawRect = CGRectMake(((destinationWidth - scaledSizeForImage.width) * cropRect.origin.x),
                             ((destinationHeight - scaledSizeForImage.height) * cropRect.origin.y),
                             scaledSizeForImage.width,

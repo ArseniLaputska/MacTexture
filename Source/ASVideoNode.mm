@@ -25,13 +25,13 @@ static BOOL ASAssetIsEqual(AVAsset *asset1, AVAsset *asset2) {
       && ASObjectIsEqual(((AVURLAsset *)asset1).URL, ((AVURLAsset *)asset2).URL));
 }
 
-static UIViewContentMode ASContentModeFromVideoGravity(NSString *videoGravity) {
+static NSViewContentMode ASContentModeFromVideoGravity(NSString *videoGravity) {
   if ([videoGravity isEqualToString:AVLayerVideoGravityResizeAspectFill]) {
-    return UIViewContentModeScaleAspectFill;
+    return NSViewContentModeScaleAspectFill;
   } else if ([videoGravity isEqualToString:AVLayerVideoGravityResize]) {
-    return UIViewContentModeScaleToFill;
+    return NSViewContentModeScaleToFill;
   } else {
-    return UIViewContentModeScaleAspectFit;
+    return NSViewContentModeScaleAspectFit;
   }
 }
 

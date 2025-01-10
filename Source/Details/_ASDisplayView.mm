@@ -257,17 +257,17 @@
   [self.layer setNeedsDisplay];
 }
 
-- (UIViewContentMode)contentMode
+- (NSViewContentMode)contentMode
 {
   return ASDisplayNodeUIContentModeFromCAContentsGravity(self.layer.contentsGravity);
 }
 
-- (void)setContentMode:(UIViewContentMode)contentMode
+- (void)setContentMode:(NSViewContentMode)contentMode
 {
-  ASDisplayNodeAssert(contentMode != UIViewContentModeRedraw, @"Don't do this. Use needsDisplayOnBoundsChange instead.");
+  ASDisplayNodeAssert(contentMode != NSViewContentModeRedraw, @"Don't do this. Use needsDisplayOnBoundsChange instead.");
 
   // Do our own mapping so as not to call super and muck up needsDisplayOnBoundsChange. If we're in a production build, fall back to resize if we see redraw
-  self.layer.contentsGravity = (contentMode != UIViewContentModeRedraw) ? ASDisplayNodeCAContentsGravityFromUIContentMode(contentMode) : kCAGravityResize;
+  self.layer.contentsGravity = (contentMode != NSViewContentModeRedraw) ? ASDisplayNodeCAContentsGravityFromUIContentMode(contentMode) : kCAGravityResize;
 }
 
 - (void)setBounds:(CGRect)bounds

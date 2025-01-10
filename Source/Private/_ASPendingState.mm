@@ -108,7 +108,7 @@ static constexpr ASPendingStateFlags kZeroFlags = {0};
   NSColor *tintColor;
   CGFloat alpha;
   CGFloat cornerRadius;
-  UIViewContentMode contentMode;
+  NSViewContentMode contentMode;
   CGPoint anchorPoint;
   CGPoint position;
   CGFloat zPosition;
@@ -258,7 +258,7 @@ static CGColorRef blackColorRef = NULL;
   _flags.autoresizesSubviews = YES;
   alpha = 1.0f;
   cornerRadius = 0.0f;
-  contentMode = UIViewContentModeScaleToFill;
+  contentMode = NSViewContentModeScaleToFill;
   _stateToApplyFlags.needsDisplay = NO;
   anchorPoint = CGPointMake(0.5, 0.5);
   position = CGPointZero;
@@ -474,7 +474,7 @@ static CGColorRef blackColorRef = NULL;
 //  _stateToApplyFlags.setMaskedCorners = YES;
 //}
 
-- (void)setContentMode:(UIViewContentMode)newContentMode
+- (void)setContentMode:(NSViewContentMode)newContentMode
 {
   contentMode = newContentMode;
   _stateToApplyFlags.setContentMode = YES;

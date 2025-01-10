@@ -189,7 +189,7 @@ static inline NSEdgeInsets ASTextNSEdgeInsetsInvert(NSEdgeInsets insets) {
  @return A rectangle for the given content mode.
  @discussion UIViewContentModeRedraw is same as UIViewContentModeScaleToFill.
  */
-CGRect ASTextCGRectFitWithContentMode(CGRect rect, CGSize size, UIViewContentMode mode);
+CGRect ASTextCGRectFitWithContentMode(CGRect rect, CGSize size, NSViewContentMode mode);
 
 /// Returns the center for the rectangle.
 static inline CGPoint ASTextCGRectGetCenter(CGRect rect) {

@@ -42,14 +42,14 @@ ASDK_EXTERN void ASDisplayNodeSetResizableContents(id<ASResizableContents> obj, 
  @param contentMode Any of the UIViewContentMode constants
  @return A human-readable representation of the constant, or the integer value of the constant if not recognized.
  */
-ASDK_EXTERN NSString *ASDisplayNodeNSStringFromUIContentMode(UIViewContentMode contentMode);
+ASDK_EXTERN NSString *ASDisplayNodeNSStringFromUIContentMode(NSViewContentMode contentMode);
 
 /**
  Turns a string representing a contentMode into a contentMode
  @param string Any of the strings in UIContentModeDescriptionLUT
  @return Any of the UIViewContentMode constants, or an int if the string is a number. If the string is not recognized, UIViewContentModeScaleToFill is returned.
  */
-ASDK_EXTERN UIViewContentMode ASDisplayNodeUIContentModeFromNSString(NSString *string);
+ASDK_EXTERN NSViewContentMode ASDisplayNodeUIContentModeFromNSString(NSString *string);
 
 /**
  Maps a value of UIViewContentMode to a corresponding contentsGravity
@@ -57,7 +57,7 @@ ASDK_EXTERN UIViewContentMode ASDisplayNodeUIContentModeFromNSString(NSString *s
  @param contentMode A content mode except for UIViewContentModeRedraw, which has no corresponding contentsGravity (it corresponds to needsDisplayOnBoundsChange = YES)
  @return An NSString constant from the documentation, eg kCAGravityCenter... or nil if there is no corresponding contentsGravity. Will assert if contentMode is unknown.
  */
-ASDK_EXTERN NSString *const ASDisplayNodeCAContentsGravityFromUIContentMode(UIViewContentMode contentMode);
+ASDK_EXTERN NSString *const ASDisplayNodeCAContentsGravityFromUIContentMode(NSViewContentMode contentMode);
 
 /**
  Maps a value of contentsGravity to a corresponding UIViewContentMode
@@ -65,7 +65,7 @@ ASDK_EXTERN NSString *const ASDisplayNodeCAContentsGravityFromUIContentMode(UIVi
  @param contentsGravity A contents gravity
  @return A UIViewContentMode constant from UIView.h, eg UIViewContentModeCenter...,  or UIViewContentModeScaleToFill if contentsGravity is not one of the CA constants. Will assert if the contentsGravity is unknown.
  */
-ASDK_EXTERN UIViewContentMode ASDisplayNodeUIContentModeFromCAContentsGravity(NSString *const contentsGravity);
+ASDK_EXTERN NSViewContentMode ASDisplayNodeUIContentModeFromCAContentsGravity(NSString *const contentsGravity);
 
 /**
  Use this to create a stretchable appropriate to approximate a filled rectangle, but with antialiasing on the edges when not pixel-aligned. It's best to keep the layer this image is added to with contentsScale equal to the scale of the final transform to screen space so it is able to antialias appropriately even when you shrink or grow the layer.

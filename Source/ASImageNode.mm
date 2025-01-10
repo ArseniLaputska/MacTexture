@@ -41,7 +41,7 @@ typedef void (^ASImageNodeDrawParametersBlock)(ASWeakMapEntry *entry);
   CGFloat _contentsScale;
   NSColor *_backgroundColor;
   NSColor *_tintColor;
-  UIViewContentMode _contentMode;
+  NSViewContentMode _contentMode;
   BOOL _cropEnabled;
   BOOL _forceUpscaling;
   CGSize _forcedSize;
@@ -169,7 +169,7 @@ typedef void (^ASImageNodeDrawParametersBlock)(ASWeakMapEntry *entry);
 
   // TODO can this be removed?
   self.contentsScale = ASScreenScale();
-  self.contentMode = UIViewContentModeScaleAspectFill;
+  self.contentMode = NSViewContentModeScaleAspectFill;
   self.opaque = NO;
   self.clipsToBounds = YES;
 
@@ -356,7 +356,7 @@ static inline bool NSEdgeInsetsEqualToEdgeInsets(NSEdgeInsets insets1, NSEdgeIns
   BOOL isOpaque                    = drawParameter->_opaque;
   NSColor *backgroundColor         = drawParameter->_backgroundColor;
   NSColor *tintColor               = drawParameter->_tintColor;
-  UIViewContentMode contentMode    = drawParameter->_contentMode;
+  NSViewContentMode contentMode    = drawParameter->_contentMode;
   CGFloat contentsScale            = drawParameter->_contentsScale;
   CGRect cropDisplayBounds         = drawParameter->_cropDisplayBounds;
   CGRect cropRect                  = drawParameter->_cropRect;
@@ -383,9 +383,9 @@ static inline bool NSEdgeInsetsEqualToEdgeInsets(NSEdgeInsets insets1, NSEdgeIns
   CGSize imageSizeInPixels = CGSizeMake(imageSize.width * drawParameter->_contentsScale, imageSize.height * drawParameter->_contentsScale);
   CGSize boundsSizeInPixels = CGSizeMake(std::floor(bounds.size.width * contentsScale), std::floor(bounds.size.height * contentsScale));
 
-  BOOL contentModeSupported = contentMode == UIViewContentModeScaleAspectFill ||
-                              contentMode == UIViewContentModeScaleAspectFit ||
-                              contentMode == UIViewContentModeCenter;
+  BOOL contentModeSupported = contentMode == NSViewContentModeScaleAspectFill ||
+                              contentMode == NSViewContentModeScaleAspectFit ||
+                              contentMode == NSViewContentModeCenter;
 
   CGSize backingSize   = CGSizeZero;
   CGRect imageDrawRect = CGRectZero;
@@ -721,7 +721,7 @@ static ASWeakMap<ASImageNodeContentsKey *, NSImage *> *cache = nil;
 
   // Re-display if we need to.
   ASPerformBlockOnMainThread(^{
-    if (self.nodeLoaded && self.contentMode == UIViewContentModeScaleAspectFill && isCroppingImage)
+    if (self.nodeLoaded && self.contentMode == NSViewContentModeScaleAspectFill && isCroppingImage)
       [self setNeedsDisplay];
   });
 }

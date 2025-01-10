@@ -722,7 +722,7 @@ ASDK_EXTERN NSInteger const ASDefaultDrawingPriority;
  * Thus, UIViewContentModeRedraw is not allowed; use needsDisplayOnBoundsChange = YES instead, and pick an appropriate 
  * contentMode for your content while it's being re-rendered.
  */
-@property            UIViewContentMode contentMode;         // default=UIViewContentModeScaleToFill
+@property            NSViewContentMode contentMode;         // default=UIViewContentModeScaleToFill
 @property (copy)     NSString *contentsGravity;             // Use .contentMode in preference when possible.
 
 @property (nullable) CGColorRef shadowColor;                // default=opaque rgb black

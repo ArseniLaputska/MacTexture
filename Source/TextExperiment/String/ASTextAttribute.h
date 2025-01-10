@@ -272,7 +272,7 @@ typedef void(^ASTextAction)(NSView *containerView, NSAttributedString *text, NSR
 @interface ASTextAttachment : NSObject<NSCoding, NSCopying>
 + (instancetype)attachmentWithContent:(nullable id)content NS_RETURNS_RETAINED;
 @property (nullable, nonatomic) id content;             ///< Supported type: NSImage, UIView, CALayer
-@property (nonatomic) UIViewContentMode contentMode;            ///< Content display mode.
+@property (nonatomic) NSViewContentMode contentMode;            ///< Content display mode.
 @property (nonatomic) NSEdgeInsets contentInsets;               ///< The insets when drawing content.
 @property (nullable, nonatomic) NSDictionary *userInfo; ///< The user information dictionary.
 @end

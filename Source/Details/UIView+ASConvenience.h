@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic)          CGFloat alpha;
 @property (nonatomic)          CGRect bounds;
 @property (nonatomic)          CGRect frame;   // Only for use with nodes wrapping synchronous views
-@property (nonatomic)          UIViewContentMode contentMode;
+@property (nonatomic)          NSViewContentMode contentMode;
 //@property (nonatomic)          UISemanticContentAttribute semanticContentAttribute API_AVAILABLE(ios(9.0), tvos(9.0));
 @property (nonatomic, getter=isUserInteractionEnabled) BOOL userInteractionEnabled;
 @property (nonatomic, getter=isExclusiveTouch) BOOL exclusiveTouch;

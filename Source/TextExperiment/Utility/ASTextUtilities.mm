@@ -61,21 +61,21 @@ NSCharacterSet *ASTextVerticalFormRotateAndMoveCharacterSet() {
   return set;
 }
 
-CGRect ASTextCGRectFitWithContentMode(CGRect rect, CGSize size, UIViewContentMode mode) {
+CGRect ASTextCGRectFitWithContentMode(CGRect rect, CGSize size, NSViewContentMode mode) {
   rect = CGRectStandardize(rect);
   size.width = size.width < 0 ? -size.width : size.width;
   size.height = size.height < 0 ? -size.height : size.height;
   CGPoint center = CGPointMake(CGRectGetMidX(rect), CGRectGetMidY(rect));
   switch (mode) {
-    case UIViewContentModeScaleAspectFit:
-    case UIViewContentModeScaleAspectFill: {
+    case NSViewContentModeScaleAspectFit:
+    case NSViewContentModeScaleAspectFill: {
       if (rect.size.width < 0.01 || rect.size.height < 0.01 ||
           size.width < 0.01 || size.height < 0.01) {
         rect.origin = center;
         rect.size = CGSizeZero;
       } else {
         CGFloat scale;
-        if (mode == UIViewContentModeScaleAspectFit) {
+        if (mode == NSViewContentModeScaleAspectFit) {
           if (size.width / size.height < rect.size.width / rect.size.height) {
             scale = rect.size.height / size.height;
           } else {
@@ -94,46 +94,46 @@ CGRect ASTextCGRectFitWithContentMode(CGRect rect, CGSize size, UIViewContentMod
         rect.origin = CGPointMake(center.x - size.width * 0.5, center.y - size.height * 0.5);
       }
     } break;
-    case UIViewContentModeCenter: {
+    case NSViewContentModeCenter: {
       rect.size = size;
       rect.origin = CGPointMake(center.x - size.width * 0.5, center.y - size.height * 0.5);
     } break;
-    case UIViewContentModeTop: {
+    case NSViewContentModeTop: {
       rect.origin.x = center.x - size.width * 0.5;
       rect.size = size;
     } break;
-    case UIViewContentModeBottom: {
+    case NSViewContentModeBottom: {
       rect.origin.x = center.x - size.width * 0.5;
       rect.origin.y += rect.size.height - size.height;
       rect.size = size;
     } break;
-    case UIViewContentModeLeft: {
+    case NSViewContentModeLeft: {
       rect.origin.y = center.y - size.height * 0.5;
       rect.size = size;
     } break;
-    case UIViewContentModeRight: {
+    case NSViewContentModeRight: {
       rect.origin.y = center.y - size.height * 0.5;
       rect.origin.x += rect.size.width - size.width;
       rect.size = size;
     } break;
-    case UIViewContentModeTopLeft: {
+    case NSViewContentModeTopLeft: {
       rect.size = size;
     } break;
-    case UIViewContentModeTopRight: {
+    case NSViewContentModeTopRight: {
       rect.origin.x += rect.size.width - size.width;
       rect.size = size;
     } break;
-    case UIViewContentModeBottomLeft: {
+    case NSViewContentModeBottomLeft: {
       rect.origin.y += rect.size.height - size.height;
       rect.size = size;
     } break;
-    case UIViewContentModeBottomRight: {
+    case NSViewContentModeBottomRight: {
       rect.origin.x += rect.size.width - size.width;
       rect.origin.y += rect.size.height - size.height;
       rect.size = size;
     } break;
-    case UIViewContentModeScaleToFill:
-    case UIViewContentModeRedraw:
+    case NSViewContentModeScaleToFill:
+    case NSViewContentModeRedraw:
     default: {
       rect = rect;
     }

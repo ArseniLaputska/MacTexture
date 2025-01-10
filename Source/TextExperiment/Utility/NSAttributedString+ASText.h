@@ -591,7 +591,7 @@ NS_ASSUME_NONNULL_BEGIN
  @since ASText:6.0
  */
 + (NSMutableAttributedString *)as_attachmentStringWithContent:(nullable id)content
-                                                  contentMode:(UIViewContentMode)contentMode
+                                                  contentMode:(NSViewContentMode)contentMode
                                                         width:(CGFloat)width
                                                        ascent:(CGFloat)ascent
                                                       descent:(CGFloat)descent;
@@ -625,7 +625,7 @@ NS_ASSUME_NONNULL_BEGIN
  @since ASText:6.0
  */
 + (NSMutableAttributedString *)as_attachmentStringWithContent:(nullable id)content
-                                                  contentMode:(UIViewContentMode)contentMode
+                                                  contentMode:(NSViewContentMode)contentMode
                                                attachmentSize:(CGSize)attachmentSize
                                                   alignToFont:(NSFont *)font
                                                     alignment:(ASTextVerticalAlignment)alignment;

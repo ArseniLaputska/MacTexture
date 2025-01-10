@@ -10,18 +10,18 @@
 
 #define ASDK_EXTERN FOUNDATION_EXTERN
 
-typedef NS_ENUM(NSInteger, UIViewContentMode) {
-    UIViewContentModeScaleToFill,
-    UIViewContentModeScaleAspectFit,
-    UIViewContentModeScaleAspectFill,
-    UIViewContentModeCenter,
-    UIViewContentModeTop,
-    UIViewContentModeBottom,
-    UIViewContentModeLeft,
-    UIViewContentModeRight,
-    UIViewContentModeTopLeft,
-    UIViewContentModeTopRight,
-    UIViewContentModeBottomLeft,
-    UIViewContentModeBottomRight,
-    UIViewContentModeRedraw
+typedef NS_ENUM(NSInteger, NSViewContentMode) {
+    NSViewContentModeScaleToFill,
+    NSViewContentModeScaleAspectFit,
+    NSViewContentModeScaleAspectFill,
+    NSViewContentModeCenter,
+    NSViewContentModeTop,
+    NSViewContentModeBottom,
+    NSViewContentModeLeft,
+    NSViewContentModeRight,
+    NSViewContentModeTopLeft,
+    NSViewContentModeTopRight,
+    NSViewContentModeBottomLeft,
+    NSViewContentModeBottomRight,
+    NSViewContentModeRedraw
 };

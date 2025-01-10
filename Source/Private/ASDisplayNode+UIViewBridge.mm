@@ -711,7 +711,7 @@ if (shouldApply) { _layer.layerProperty = (layerValueExpr); } else { ASDisplayNo
 //  _setToViewOnly(autoresizingMask, mask);
 //}
 
-- (UIViewContentMode)contentMode
+- (NSViewContentMode)contentMode
 {
   _bridge_prologue_read;
   if (_loaded(self)) {
@@ -726,7 +726,7 @@ if (shouldApply) { _layer.layerProperty = (layerValueExpr); } else { ASDisplayNo
   }
 }
 
-- (void)setContentMode:(UIViewContentMode)contentMode
+- (void)setContentMode:(NSViewContentMode)contentMode
 {
   _bridge_prologue_write;
   BOOL shouldApply = ASDisplayNodeShouldApplyBridgedWriteToView(self);
