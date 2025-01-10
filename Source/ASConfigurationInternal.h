@@ -23,12 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 #if DEBUG
 #define ASActivateExperimentalFeature(opt) _ASActivateExperimentalFeature(opt)
 #else
-#define ASActivateExperimentalFeature(opt) ({\
-  static BOOL result;\
-  static dispatch_once_t onceToken;\
-  dispatch_once(&onceToken, ^{ result = _ASActivateExperimentalFeature(opt); });\
-  result;\
-})
+#define ASActivateExperimentalFeature(opt) _ASActivateExperimentalFeature(opt)
 #endif
 
 /**

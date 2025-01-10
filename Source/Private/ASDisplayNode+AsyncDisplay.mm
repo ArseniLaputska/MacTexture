@@ -262,15 +262,15 @@ using AS::MutexLocker;
    Если мы профилируем, обернем блок отображения с использованием signpost start и end.
    Окрасим интервал красным, если отменено, зеленым иначе.
    */
-#if AS_SIGNPOST_ENABLE
-  __weak typeof(self) weakSelf = self;
-  displayBlock = ^{
-      ASSignpostStart(LayerDisplay, weakSelf, "%@", ASObjectDescriptionMakeTiny(weakSelf));
-      id result = displayBlock();
-      ASSignpostEnd(LayerDisplay, weakSelf, "(%d %d), canceled: %d", (int)bounds.size.width, (int)bounds.size.height, (int)isCancelledBlock());
-      return result;
-  };
-#endif
+//#if AS_SIGNPOST_ENABLE
+//  __weak typeof(self) weakSelf = self;
+//  displayBlock = ^{
+//      ASSignpostStart(LayerDisplay, weakSelf, "%@", ASObjectDescriptionMakeTiny(weakSelf));
+//      id result = displayBlock();
+//      ASSignpostEnd(LayerDisplay, weakSelf, "(%d %d), canceled: %d", (int)bounds.size.width, (int)bounds.size.height, (int)isCancelledBlock());
+//      return result;
+//  };
+//#endif
   
   return displayBlock;
 }
